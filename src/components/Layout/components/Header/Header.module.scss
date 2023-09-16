@@ -2,6 +2,13 @@
     // mặc định là 60px
     // nếu muốn thay đổi đó là 70px 
     // height: var( --default-layout-header-height, 70px);
+
+    --search-border-radius: 92px;
+    --search-height: 46px;
+    --search-top-spacer: 9px;
+    --search-button-width: 52px;
+
+
     height: var( --default-layout-header-height);
     width: 100%;
     box-shadow: 0px 1px 1px rgb(0 0 0 /12%);
@@ -11,5 +18,88 @@
 
 .inner {
     height: 100%;
-     
+    width: var(--default-layout-width);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    
+}
+
+.search {
+    position: relative;
+    width: 361px;
+    height: var(--search-height);
+    background: rgba(22, 24, 35, .06);
+    border-radius: var(--search-border-radius);
+    padding-left: 16px;
+    display: flex;
+    border: 1.5px solid transparent;
+
+    input {
+        color: var(--black);
+        font-size: 1.6rem;
+        background-color: transparent;
+        // tự căn giữa trong ô search input
+        height: 100%;
+        // làm tràn ra ô input
+        flex: 1;
+        // con trỏ nhấp nháy có màu
+        caret-color: red;
+    }
+
+    // khi không có placehoder đổi màu cho button icon search   
+    // ~ là selector đến class nào đó 
+    input:not(:placeholder-shown) ~ .search-btn{
+        // nếu không có placeholder trong ô input (người dùng điền value vào) thì
+        // --> chuyển background color cho icon search
+        // background-color : blue;
+        color:  rgba(22, 24, 35, 0.75);
+    }
+
+    &::after {
+        content: ""; 
+        position: absolute;
+        width: 1px;
+        height: calc(var(--search-height) - var(--search-top-spacer)*2);
+        top: var(--search-top-spacer);
+        right: var(--search-button-width);
+        
+        background-color: rgba(22, 24, 35, 0.12);
+    }
+    // make border for input field when user clicks into it
+    &:focus-within {
+        border-color: rgba(22, 24, 35, 0.2);
+    }
+}
+
+.clear,
+.loading {
+    position: absolute;
+    right: calc(var(--search-button-width ) + 16px);
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(22, 24, 35, 0.34);
+}
+
+.search-btn {
+    width: var(--search-button-width);
+    height: 100%;
+    border-top-right-radius: var(--search-border-radius) ;
+    border-bottom-right-radius: var(--search-border-radius) ;
+    cursor: pointer;
+    color: rgba(22, 24, 35, 0.34);
+    font-size: 1.8rem;
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+        color: var(--black);
+        cursor: pointer;
+        
+    }
+    &:active {
+        background-color: rgba(22, 24, 35, 0.06);
+
+    }
 }
