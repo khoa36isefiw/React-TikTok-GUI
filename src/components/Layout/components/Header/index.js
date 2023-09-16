@@ -2,12 +2,13 @@ import {useState, useEffect} from 'react'
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react/headless';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faMagnifyingGlass, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark, faMagnifyingGlass, faSignIn, faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 import {Wrapper as PopperWapper} from '~/components/Popper'
 import styles from './Header.module.scss'
 import images from '~/assets/images';
 import AccountItem from '../AccountItem';
+import Button from '~/components/Button'
 
 
 // can use "-" post-item
@@ -73,7 +74,18 @@ function Header() {
                 </Tippy>
 
                 <div className={cx('action')}>
-                
+                    {/* add props primary */}
+                    <Button text>Upload</Button>
+                    {/* <Button outline rounded>Outline</Button>
+                    <Button primary rounded >Get app</Button> */}
+                    {/* ngăn chặn onClick */}
+                    {/* <Button primary disabled onClick= {() => alert('hello')}>Log in</Button> */}
+                    {/* <Button outline className={cx('custom-login')}>Customize</Button> */}
+                    <Button primary leftIcon={<FontAwesomeIcon icon={faSignIn}/>}
+                    >
+                        Login
+                    </Button>
+                    
                 </div>
             </div>
            
