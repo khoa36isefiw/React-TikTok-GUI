@@ -19,12 +19,14 @@ function App() {
             // if layout null --> get Fragment else get DefaultLayout
             // const LayoutCheck = route.layout === null? Fragment : DefaultLayout;
 
-
+            // component, dont have layout
             let LayoutCheck = DefaultLayout;
             
+            // if we push layout
             if (route.layout) {
               LayoutCheck = route.layout;
             }
+            // when layout === null
             else if(route.layout === null) {
               LayoutCheck = Fragment;
             }
@@ -41,7 +43,7 @@ function App() {
               element = {<LayoutCheck>
                           <Page />
                         </LayoutCheck>}
-              />
+            />
                 
        
     
