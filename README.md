@@ -14,13 +14,3 @@
 - when user logged in 
 - when user didn't login
 
-- Báo cáo khảo sát hiện trạng nghiệp vụ
-- Báo cáo trình bày được các công nghệ chính sử dụng trong đề tài. 
-- Danh sách các chức năng chính sẽ thực hiện: Link google drive
-    Ví dụ: https://docs.google.com/document/d/1tNu10YuU2P16M5GQseUQc8ycxQ6_tvFS/edit
-- Xây dựng lược đồ usercase cho 100% các chức năng của đề tài 
-- Xây dựng lược đồ lớp/đối tượng hoặc lược đồ thực thể. 
-- Thiết kế giao diện cho tất cả các chức năng.
-- Thiết kế lược đồ sequence diagram cho tất cả các chức năng.
-- Thiết kế lược đồ activity diagram cho các chức năng quan trọng. 
-- 100% chức năng có thiết kế test case
