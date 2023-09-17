@@ -1,0 +1,15 @@
+.wrapper{
+    // make center
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+.container {
+    width: var(--default-layout-width); 
+    // theo chieu ngang side bar va content page
+    display: flex;
+}
+.content {
+    flex: 1;
+    min-height: 1000px;
+}
