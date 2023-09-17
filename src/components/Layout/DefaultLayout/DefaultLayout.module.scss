@@ -8,6 +8,7 @@
     width: var(--default-layout-width); 
     // theo chieu ngang side bar va content page
     display: flex;
+    padding: 0 var(--default-layout-horizontal-spacer);
 }
 .content {
     flex: 1;

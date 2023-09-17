@@ -3,7 +3,8 @@ import classNames from 'classnames/bind'
 import styles from './Button.module.scss'
 
 const cx = classNames.bind(styles);
-function Button({to,
+function Button({
+    to,
     href,
     onClick,
     children,
@@ -18,7 +19,9 @@ function Button({to,
     rightIcon,
     className,
     ...passProps}) {
+    
     // cơ chế thay đổi thẻ a hoặc button
+    // Component
     let Comp = 'button';
     const _props = {
         onClick,

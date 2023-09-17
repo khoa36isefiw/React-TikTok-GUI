@@ -18,7 +18,25 @@ const cx = classNames.bind(styles);
 const MENU_ITEMS = [
     {
         icon: <FontAwesomeIcon icon={faEarthAsia}/>,
-        title: 'English'
+        title: 'English',
+
+        // menu level 2
+        children: {
+            title: 'Language', 
+            data: [
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+            ]
+        }
+
     },
     {
         icon: <FontAwesomeIcon icon={faCircleQuestion}/>,
@@ -30,6 +48,7 @@ const MENU_ITEMS = [
         title: 'Keyboard shortcuts'
     }
 ]; 
+
 function Header() {
     const [searchResult, setSearchResult] = useState([]);
     // Fake API after 3 seconds have some result 
@@ -38,6 +57,11 @@ function Header() {
             setSearchResult([]);
         }, 0)
     }, []) 
+
+    // hadnle logic
+    const handleMenuChange  = (menuItem) => {
+        console.log(menuItem);
+    }
 
     return (
         <header className={cx('wrapper')}>
@@ -83,13 +107,14 @@ function Header() {
 
                         {/* Make pop up "Tool tip" */}
                     
-                            <button className={cx('search-btn')}>
-                                {/* search icon */} 
-                                <FontAwesomeIcon icon={faMagnifyingGlass}/>
-                            </button>
+                        <button className={cx('search-btn')}>
+                            {/* search icon */} 
+                            <FontAwesomeIcon icon={faMagnifyingGlass}/>
+                        </button>
                     </div>
                 </Tippy>
 
+                {/* Button Upload, Login, Menu More  */}
                 <div className={cx('action')}>
                     {/* add props primary */}
                     <Button text>Upload</Button>
@@ -107,6 +132,7 @@ function Header() {
                     <Menu
                         // get the array
                         items={MENU_ITEMS}
+                        onChange= {handleMenuChange}
                     >
                          
                         <button className={cx('more-btn')}>
